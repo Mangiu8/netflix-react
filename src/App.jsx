@@ -3,20 +3,21 @@ import "./App.css";
 import MyNav from "./components/MyNav";
 import TvShows from "./components/TvShows";
 import Myfooter from "./components/MyFooter";
-import BodyGallery from "./components/BodyGallery";
+// import BodyGallery from "./components/BodyGallery";
 import { Container } from "react-bootstrap";
+import MyCarousel from "./components/MyCarousel";
 function App() {
   return (
     <div className="App dark-background">
       <Container fluid className="dark-background">
         <MyNav />
         <TvShows />
-        <BodyGallery searchValue="Joker" />
-        <BodyGallery searchValue="Transformers" />
-        <BodyGallery searchValue="Iron Man" />
-        <BodyGallery searchValue="Barbie" />
-        <BodyGallery searchValue="Spider-Man" />
-        <BodyGallery searchValue="" />
+        <MyCarousel searchValue="Joker" />
+        <MyCarousel searchValue="Transformers" />
+        <MyCarousel searchValue="Iron Man" />
+        <MyCarousel searchValue="Barbie" />
+        <MyCarousel searchValue="Spider-Man" />
+        <MyCarousel searchValue="" />
         <Myfooter />
       </Container>
     </div>
@@ -24,3 +25,5 @@ function App() {
 }
 
 export default App;
+// ho lasciato  attivo il carousel perche lo preferisco ma l'ho creato dopo quindi lascio anche Bodygallery perche' era il progetto iniziale
+// anche perche' per fare i carousel mi sono aiutato parecchio online

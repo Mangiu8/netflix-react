@@ -13,13 +13,13 @@ const TvShows = () => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="bg-black">
-              <Dropdown.Item href="#">Action</Dropdown.Item>
               <Dropdown.Item href="#">Thriller</Dropdown.Item>
               <Dropdown.Item href="#">Romance</Dropdown.Item>
               <Dropdown.Item href="#">Crime</Dropdown.Item>
-              <Dropdown.Item href="#">Comedy</Dropdown.Item>
+              <Dropdown.Item href="#">Action</Dropdown.Item>
               <Dropdown.Item href="#">Fantasy</Dropdown.Item>
               <Dropdown.Item href="#">Documentary</Dropdown.Item>
+              <Dropdown.Item href="#">Comedy</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Col>
