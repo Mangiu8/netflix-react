@@ -1,0 +1,12 @@
+.dark-background {
+  background-color: #141414;
+}
+.hover-zoom:hover {
+  transform: scale(1.2);
+  transition: transform 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.link-hover:hover {
+  color: white !important; /*dovuto usarlo per forza per i link del footer*/
+}
