@@ -1,29 +1,32 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MyNav from "./components/MyNav";
-import TvShows from "./components/TvShows";
+import MyDrop from "./components/MyDrop";
 import Myfooter from "./components/MyFooter";
+import TvShow from "./components/TvShow";
 // import BodyGallery from "./components/BodyGallery";
 import { Container } from "react-bootstrap";
-import MyCarousel from "./components/MyCarousel";
+// import MyCarousel from "./components/MyCarousel";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MyHome from "./components/MyHome";
+import MovieDetails from "./components/MovieDetails";
 function App() {
   return (
     <div className="App dark-background">
-      <Container fluid className="dark-background">
-        <MyNav />
-        <TvShows />
-        <MyCarousel searchValue="Joker" />
-        <MyCarousel searchValue="Transformers" />
-        <MyCarousel searchValue="Iron Man" />
-        <MyCarousel searchValue="Barbie" />
-        <MyCarousel searchValue="Spider-Man" />
-        <MyCarousel searchValue="" />
-        <Myfooter />
-      </Container>
+      <BrowserRouter>
+        <Container fluid className="dark-background">
+          <MyNav />
+          <MyDrop />
+          <Routes>
+            <Route path="/" element={<MyHome />} />
+            <Route path="/tvshow" element={<TvShow />} />
+            <Route path="/moviedetails/:MovieID" element={<MovieDetails />} />
+          </Routes>
+          <Myfooter />
+        </Container>
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
-// ho lasciato  attivo il carousel perche lo preferisco ma l'ho creato dopo quindi lascio anche Bodygallery perche' era il progetto iniziale
-// anche perche' per fare i carousel mi sono aiutato parecchio online

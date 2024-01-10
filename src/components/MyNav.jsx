@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import NetflixLogo from "../assets/logo.png";
 import { Search, PersonCircle, Bell } from "react-bootstrap-icons";
+import { NavLink } from "react-router-dom";
 
 const MyNav = () => {
   return (
@@ -12,8 +13,12 @@ const MyNav = () => {
         </Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#TVShows">TV Shows</Nav.Link>
+            <NavLink to="/" className="nav-link">
+              Home
+            </NavLink>
+            <NavLink to="/tvshow" className="nav-link">
+              TV Shows
+            </NavLink>
             <Nav.Link href="#Movies">Movies</Nav.Link>
             <Nav.Link href="#RecentlyAdded">Recently Added</Nav.Link>
             <Nav.Link href="#MyList">My List</Nav.Link>

@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Alert, Col, Row } from "react-bootstrap";
+import { Link } from "react-bootstrap-icons";
 
 class BodyGallery extends Component {
   state = {
@@ -53,12 +54,14 @@ class BodyGallery extends Component {
           ) : (
             movies.map((movie) => (
               <Col className="hover-zoom" lg="2" xs={6} md={4} key={movie.imdbID}>
-                <img
-                  src={movie.Poster}
-                  alt={movie.Title}
-                  className="img-fluid"
-                  style={{ width: "400px", height: "200px", objectFit: "cover" }}
-                />
+                <Link to={`/MovieDetails/${movie.imdbID}`}>
+                  <img
+                    src={movie.Poster}
+                    alt={movie.Title}
+                    className="img-fluid"
+                    style={{ width: "400px", height: "100px", objectFit: "cover" }}
+                  />
+                </Link>
               </Col>
             ))
           )}

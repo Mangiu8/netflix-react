@@ -3,6 +3,7 @@ import { Alert, Col, Row } from "react-bootstrap";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-bootstrap-icons";
 
 class MyCarousel extends Component {
   state = {
@@ -30,7 +31,7 @@ class MyCarousel extends Component {
         const myMovies = data.Search;
         this.setState({ movies: myMovies, loading: false });
       } else {
-        throw new Error("No movies found");
+        throw new Error("No data found");
       }
     } catch (error) {
       this.setState({ error: error.message, loading: false });
@@ -92,15 +93,17 @@ class MyCarousel extends Component {
           ) : (
             <Slider {...slickSettings}>
               {movies.map((movie) => (
-                <div key={movie.imdbID}>
+                <Col key={movie.imdbID}>
+                  {/* <Link to={`/moviedetails/${movie.imdbID}`}> */}
                   <img
                     src={movie.Poster}
                     alt={movie.Title}
                     className="img-fluid"
                     style={{ width: "400px", height: "200px" }}
                   />
+                  {/* </Link> */}
                   <div className="carousel-caption"></div>
-                </div>
+                </Col>
               ))}
             </Slider>
           )}
